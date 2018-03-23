@@ -1,0 +1,24 @@
+{
+  "name": "carrental",
+  "version": "1.0.0",
+  "description": "MEAN stack project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abhibongale/CarRental.git"
+  },
+  "author": "Abhishek Bongale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abhibongale/CarRental/issues"
+  },
+  "homepage": "https://github.com/Abhibongale/CarRental#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.3"
+  }
+}
