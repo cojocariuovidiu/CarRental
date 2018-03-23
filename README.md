@@ -1,2 +1,2 @@
 # CarRental
-WEB APPLICATION USING MEAN Stack
+Web application using MEAN Stack
