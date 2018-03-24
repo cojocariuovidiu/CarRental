@@ -8,10 +8,7 @@ const compress = require('compression');
 module.exports=function(){
 	const app = express();
 
-	//Set the application view engine and 'views' folder
-	app.set('views','./app/views');
-	app.set('view engine','ejs');
-
+	
 	//Use the 'body-parser' and 'method-override' middleware functions
 	app.use(bodyParser.urlencoded({
 		extended:true
@@ -21,6 +18,7 @@ module.exports=function(){
 
 
 
+	
 	//Configure the 'session' middleware
 	app.use(session({
 		saveUnintialized:true,
@@ -28,8 +26,22 @@ module.exports=function(){
 		secret:config.sessionSecret
 	}));
 
+
+	//Set the application view engine and 'views' folder
+	app.set('views','./app/views');
+	app.set('view engine','ejs');
+
+	
+
+
+
 	//set routes
 	require('../app/routes/index.server.routes')(app);
+	require('../app/routes/user.server.routes')(app);
+	
+	//Configure static file serving
+	app.use(express.static('./public'));
 
+	//Return the Express application instance
 	return app;
 };

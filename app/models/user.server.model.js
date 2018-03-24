@@ -34,13 +34,13 @@ const UserSchema = new Schema({
 		type:String,
 		//Use a setter property to validate protocol existance in 'website' field
 		set:function(url){
-			if(!url){
+			if(!url)
+			{
 
 				return url;
-			}
-			else{
-				if(url.indexOf('http://')!=0 && url.indexOf('https://'!=0){
-					url = 'http://'+url;
+			}else{
+				if(url.indexOf('http://')!==0 && url.indexOf('https://'!==0)){
+					url = 'http://'+ url;
 				}
 			}
 
