@@ -1,11 +1,13 @@
 //Configure Files
 const ConfigureExpress = require('./config/express');
 const ConfigureMongoose = require('./config/mongoose');
+const ConfigurePassport = require('./config/passport');
+
 //Instance of the file
 
 const db = ConfigureMongoose(); 	
 const app = ConfigureExpress();
-
+const passport =ConfigurePassport();
 
 
 //Runing on port

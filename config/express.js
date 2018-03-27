@@ -4,6 +4,8 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const methodOverride=require('method-override');
 const compress = require('compression');
+const passport = require('passport');
+const flash =require('connect-flash');
 
 module.exports=function(){
 	const app = express();
@@ -31,11 +33,17 @@ module.exports=function(){
 	app.set('views','./app/views');
 	app.set('view engine','ejs');
 
-	
+	//Configure the flash messages middleware
+	app.use(flash());
+
+	//Configure the passport messages middleware
+
+	app.use(passport.initialize());
+	app.use(passport.session());
 
 
 
-	//set routes
+	//Loading the routing files
 	require('../app/routes/index.server.routes')(app);
 	require('../app/routes/user.server.routes')(app);
 	
