@@ -8,6 +8,7 @@ const passport = require('passport');
 const flash =require('connect-flash');
 
 module.exports=function(){
+	// Create a new Express application instance
 	const app = express();
 
 	

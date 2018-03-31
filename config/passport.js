@@ -19,5 +19,11 @@ module.exports=function(){
 			done(err,user);
 		});
 	});
+
+
+	//Load Passport's strategies configuration files
 	require('./strategies/local.js');
+	require('./strategies/twitter.js')();
+	require('./strategies/facebook.js')();
+	require('./strategies/google.js')();
 };
